@@ -1,0 +1,9 @@
+@@ -107,7 +107,7 @@
+ #if defined(HAVE_PTHREAD_H) && !defined(_WIN32)
+        for (i = 0; i < num_threads; i++) {
+            results[i] = NULL;
+-           tid[i] = (pthread_t) -1;
++           memset(&tid[i], 0, sizeof(pthread_t));
+        }
+ #endif
+        for (i = 0; i < num_threads; i++) {
